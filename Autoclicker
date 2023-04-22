@@ -1,0 +1,21 @@
+-- Initialize variables
+local autoclickerEnabled = false
+local toggleKey = Enum.KeyCode.M
+
+-- Define autoclicker function
+local function autoclicker()
+    while autoclickerEnabled do
+        mouse1click()
+        wait()
+    end
+end
+
+-- Detect key press
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+    if input.KeyCode == toggleKey and not gameProcessedEvent then
+        autoclickerEnabled = not autoclickerEnabled
+        if autoclickerEnabled then
+            autoclicker()
+        end
+    end
+end)
