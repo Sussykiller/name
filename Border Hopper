@@ -90,3 +90,9 @@ local Window = Library.CreateLib("Border Hopper", "Sentinel")
     OtherSection:NewButton("Fe Penis", "You need atleast 3 hats equipped", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Sussykiller/name/main/fe%20script"))();
     end)
+
+
+    --Credits
+    local Tab = Window:NewTab("Credits")
+    local Section = Tab:NewSection("Credits")
+    Section:NewLabel("Made By Sussykiller")
