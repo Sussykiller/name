@@ -1,6 +1,21 @@
+--Load Notification--------------------------------------------------------------------------------------
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Load check";
+    Text = "Everything loaded succesfully"
+});
+
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Credits";
+    Text = "Made by Sussykiller"
+})
+
+
+--Library---------------------------------------------------------------------------------------------------
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Border Hopper", "Sentinel")
-    -- MAIN
+    -- MAIN--------------------------------------------------------------------------------------------------
     local Main = Window:NewTab("Main")
     local MainSection = Main:NewSection("Main")
 
@@ -32,7 +47,7 @@ local Window = Library.CreateLib("Border Hopper", "Sentinel")
     end)
 
 
-    --LOCAL PLAYER
+    --LOCAL PLAYER---------------------------------------------------------------------------------------
     local Player = Window:NewTab("Player")
     local PlayerSection = Player:NewSection("Player")
 
@@ -75,7 +90,7 @@ local Window = Library.CreateLib("Border Hopper", "Sentinel")
     end)
 
 
-    --Other
+    --Other--------------------------------------------------------------------------------------------------------------
     local Other = Window:NewTab("Other")
     local OtherSection = Other:NewSection("Other")
 
@@ -91,8 +106,12 @@ local Window = Library.CreateLib("Border Hopper", "Sentinel")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Sussykiller/name/main/fe%20script"))();
     end)
 
+    OtherSection:NewButton("Autoclicker", "Press M to autoclick", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Sussykiller/name/main/Autoclicker"))();
+    end)
 
-    --Credits
+
+    --Credits-------------------------------------------------------------------------------------------------------------
     local Tab = Window:NewTab("Credits")
     local Section = Tab:NewSection("Credits")
     Section:NewLabel("Made By Sussykiller")
