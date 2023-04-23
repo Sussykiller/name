@@ -63,11 +63,11 @@ local Window = Library.CreateLib("Border Runner", "Sentinel")
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
     end)
 
-    PlayerSection:NewSlider("Jumppower", "JUMP HIGH!!", 350, 50, function(s)
+    PlayerSection:NewSlider("Jumppower", "Jump as high as possible!", 350, 50, function(s)
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
     end)
 
-    PlayerSection:NewButton("Fly", "Fly Around.", function(s)
+    PlayerSection:NewButton("Fly", "To the moon!", function(s)
         loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Fly.txt"))()
     end)
 
@@ -104,6 +104,10 @@ local Window = Library.CreateLib("Border Runner", "Sentinel")
 
     OtherSection:NewButton("Fake Lag", "Makes it look like you're lagging", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/DylanIsAKingL/Lua-Scripts/main/fake-lag.lua"))()
+    end)
+
+    OtherSection:NewButton("Kick Yourself", "Kicks you from the game", function()
+        game:GetService("Players").LocalPlayer:Kick("You're a retard.")
     end)
 
     --Credits-------------------------------------------------------------------------------------------------------------
