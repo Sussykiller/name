@@ -1,3 +1,9 @@
+Controls:
+Reinject the script to toggle the infinite jump script on or off.
+Excute Lua "G.infinjump = true" to explicity turn the infinite jump script on
+Excute Lua "G.infinjump = false" to explicity turn the infinite jump script off
+]]
+
 --Toggles the infinite jump between on or off on every script run
 _G.infinjump = not _G.infinjump
 
@@ -6,7 +12,7 @@ if _G.infinJumpStarted == nil then
 	_G.infinJumpStarted = true
 	
 	--Notifies readiness
-	game.StarterGui:SetCore("SendNotification", {Title="Infinite Jump"; Text="Infinite Jump exploit has been Successfully loaded!"; Duration=5;})
+	game.StarterGui:SetCore("SendNotification", {Title="Infinite Jump"; Text="Infinite Jump exploit is ready!"; Duration=5;})
 
 	--The actual infinite jump
 	local plr = game:GetService('Players').LocalPlayer
