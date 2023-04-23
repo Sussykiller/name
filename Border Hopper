@@ -14,17 +14,42 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 
 --Library---------------------------------------------------------------------------------------------------
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Border Hopper", "Sentinel")
+local Window = Library.CreateLib("Border Runner", "Sentinel")
     -- MAIN--------------------------------------------------------------------------------------------------
     local Main = Window:NewTab("Main")
     local MainSection = Main:NewSection("Main")
 
+    MainSection:NewButton("Infinite Yield", "FE Admin Commands", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end)
+
+    MainSection:NewButton("ESP", "Poorly made ESP, but works.", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/Sussykiller/name/main/ESP'),true))()
+    end)
+
+    MainSection:NewButton("Chat Logger", "You can see private chats from other.", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/stggPUBM", true))()
+    end)
+
+    MainSection:NewButton("Chat Spoofer", "Lets you chat for other people", function()
+        loadstring(game:HttpGet(('https://pastebin.com/raw/djBfk8Li'),true))()
+    end)
+
+    MainSection:NewButton("Dex Explorer", "Explore the workspace", function()
+        loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex%20Explorer.txt"))()
+    end)
 
     MainSection:NewButton("Back/Front Flip", "Makes you do gymnastics", function()
         loadstring(game:HttpGet('https://pastebin.com/raw/7wDcPtLk'))()
     end)
 
-    MainSection:NewToggle("Super-Human", "go fast and jump high", function(state)
+    
+
+    --LOCAL PLAYER---------------------------------------------------------------------------------------
+    local Player = Window:NewTab("Player")
+    local PlayerSection = Player:NewSection("Player")
+
+    PlayerSection:NewToggle("Super-Human", "go fast and jump high", function(state)
         if state then
             game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
             game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
@@ -33,32 +58,7 @@ local Window = Library.CreateLib("Border Hopper", "Sentinel")
             game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         end
     end)
-
-    MainSection:NewButton("Infinite Yield", "FE Admin Commands", function()
-        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
-    end)
-
-    MainSection:NewButton("Chat Logger", "You can see private chats from other.", function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/stggPUBM", true))()
-    end)
-
-    OtherSection:NewButton("Chat Spoofer", "Lets you chat for other people", function()
-        loadstring(game:HttpGet(('https://pastebin.com/raw/djBfk8Li'),true))()
-    end)
-
-    MainSection:NewButton("Dex Explorer", "Explore the workspace", function()
-        loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex%20Explorer.txt"))()
-    end)
-
-    MainSection:NewButton("ESP", "Poorly made ESP, but works.", function()
-        loadstring(game:HttpGet(('https://raw.githubusercontent.com/Sussykiller/name/main/ESP'),true))()
-    end)
-
-
-    --LOCAL PLAYER---------------------------------------------------------------------------------------
-    local Player = Window:NewTab("Player")
-    local PlayerSection = Player:NewSection("Player")
-
+    
     PlayerSection:NewSlider("Walkspeed", "SPEED!!", 500, 16, function(s)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
     end)
@@ -72,7 +72,7 @@ local Window = Library.CreateLib("Border Hopper", "Sentinel")
     end)
 
     PlayerSection:NewButton("Infinite Jump", "Jump i guess?", function(s)
-        loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Jump.txt"))()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Sussykiller/name/main/Infinite%20Jump"))()
     end)
 
 
@@ -105,19 +105,6 @@ local Window = Library.CreateLib("Border Hopper", "Sentinel")
     OtherSection:NewButton("Fake Lag", "Makes it look like you're lagging", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/DylanIsAKingL/Lua-Scripts/main/fake-lag.lua"))()
     end)
-
-    OtherSection:NewButton("Fe Penis", "You need atleast 3 hats equipped", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Sussykiller/name/main/fe%20script"))();
-    end)
-
-    OtherSection:NewButton("Autoclicker", "Press M to autoclick", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Sussykiller/name/main/Autoclicker"))();
-    end)
-
-    OtherSection:NewButton("Kick Yourself", "You will get kicked", function()
-        game:GetService("Players").LocalPlayer:Kick("Succesfully Kicked")
-    end)
-
 
     --Credits-------------------------------------------------------------------------------------------------------------
     local Tab = Window:NewTab("Credits")
